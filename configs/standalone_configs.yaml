@@ -1,0 +1,51 @@
+dataset:
+  img_path: /work/FAC/HEC/DESI/yshresth/aim/pshresth/iuxray/iuxray_kaggle/images/images_resized_500 #/scratch/ppoudel #/work/FAC/HEC/DESI/yshresth/aim/pshresth #/raid/Tdata/chestXpert
+  ann_path: /work/FAC/HEC/DESI/yshresth/aim/pshresth/iuxray #/work/FAC/HEC/DESI/yshresth/aim/pranav/mimic-cxr-processed #/home/bbhattar/Tdata/chestXpert/mimic-cxr-processed
+  dset_name: iuxray #mimic-cxr
+  view: frontal #APPA
+  partition: iid1_noleak
+
+dataloader:
+  batch_size: 48
+  eval_batch_size: 96
+  num_workers: 16
+  crop_size: 224
+
+model:
+  name: classifier
+  embed_dim: 256  # origin 2048
+  cnn_type: resnet50
+  txt_type: bert-base-uncased
+
+# optimizer configuration
+optimizer:
+  name: adam
+  learning_rate: 0.0001
+  weight_decay: 0.0
+
+# lr scheduler configuration
+lr_scheduler:
+  name: cosine_annealing
+  T_max: 40
+  warmup: 0
+
+# criterion configuration
+criterion:
+  name: BCEWithLogitsLoss
+
+# detailed training configuration
+train:
+  total_epoch: 40
+  local_epoch: 3
+  model_save_path: model_last.pth
+  best_model_save_path: model_best.pth
+  pretrain_epochs: 0
+  finetune_epochs: 30
+  finetune_lr_decay: 0.1
+  log_step: 1000
+  grad_clip: 2
+  val_epochs: 10
+  pretrain_val_epochs: 10
+  use_fp16: True
+  output_file: model.log
+  partition: hetero
