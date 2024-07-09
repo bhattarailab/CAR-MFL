@@ -1,6 +1,6 @@
 # CAR-MFL: Cross-Modal Augmentation by Retrieval for Multimodal Federated Learning with Missing Modalities
 
-This repo contains a PyTorch implementation of the paper [CAR-MFL: Cross-Modal Augmentation by Retrieval for Multimodal Federated Learning with Missing Modalities](https://arxiv.org/abs/2302.08888) (MICCAI 2024). 
+This repo contains a PyTorch implementation of the paper [CAR-MFL: Cross-Modal Augmentation by Retrieval for Multimodal Federated Learning with Missing Modalities]() (MICCAI 2024). 
 
 **<font color='red'>Note: This repository will be updated in the next few days for improved readability, easier environment setup, and datasets management</font> Please stay tuned!**
 
