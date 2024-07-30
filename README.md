@@ -24,7 +24,7 @@ For datasets, please download the MIMIC-CXR-JPG and resize all of the image into
 To reproduce CAR-FML with 8 image only clients  run the following shell command:
 
 ```shell
-python main.py --name $EXP_NAME  --algorithm fedavgRAG  --exp_dir $OUTPUT_DIR --seed $SEED --num_clients 4 --img_clients 6 --txt_clients 0 --alpha 0.3 --server_config_path configs/fedavgin_server.yaml --client_config_path configs/client_configs.yaml --use_refinement
+python main.py --name $EXP_NAME  --algorithm fedavgRAG  --exp_dir $OUTPUT_DIR --seed $SEED --num_clients 2 --img_clients 8 --txt_clients 0 --alpha 0.3 --server_config_path configs/fedavgin_server.yaml --client_config_path configs/client_configs.yaml --use_refinement
 ```
 where,
 - num_clients = No. of Multimodal Clients
@@ -33,14 +33,9 @@ where,
 
 
 
-## Citation
-
-If you find the paper provides some insights into multimodal FL or our code useful 🤗, please consider citing:
-
-```
-
-
-```
+## Contact
+- Pranav Poudel: pranav.poudel@naamii.org.np
+- Binod Bhattarai: binod.bhattarai@abdn.ac.uk
 
 ## Acknowledgements
 
